@@ -1,0 +1,13 @@
+[Unit]
+Description=Ensure internal monitor is on if HDMI is disconnected
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+Environment="DISPLAY=:0"
+Environment="WAYLAND_DISPLAY=wayland-1"
+ExecStart=/home/alunity/scripts/internal_monitor.py u
+RemainAfterExit=no
+
+[Install]
+WantedBy=graphical-session.target

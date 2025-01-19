@@ -51,3 +51,6 @@ if __name__ == "__main__":
         system('hyprctl keyword monitor "HDMI-A-1, disabled"')
         sleep(1)
         system('hyprctl keyword monitor "HDMI-A-1, preferred, auto, 1"')
+    elif argv[1] == "u":  # On unplug
+        if "eDP-1" not in output:
+            system('hyprctl keyword monitor "eDP-1, 2880x1920@120,0x0,auto"')
