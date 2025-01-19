@@ -1,0 +1,41 @@
+(defcfg
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "My KMonad output")
+  fallthrough true
+  allow-cmd true
+)
+
+(defsrc
+  caps    esc     \
+  a       s       d       h       j       k       l
+  z       x       c
+  lsft    rsft
+)
+
+(defalias
+  ;; Media control aliases
+  prev-track  previoussong  ;; Correct KMonad media key
+  play-pause  playpause     ;; Correct KMonad media key
+  next-track  nextsong      ;; Correct KMonad media key
+
+  mute (cmd-button "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+  lower (cmd-button "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-")
+  increase (cmd-button "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")
+  
+  ;; Special caps lock handling
+  caps-mod    (layer-toggle caps-layer)
+)
+
+(deflayer base
+  @caps-mod  esc    \      ;; Changed to # for UK layout
+  a          s      d       h       j       k       l          
+  z          x      c
+  lsft      rsft
+)
+
+(deflayer caps-layer
+  _           `           nubs       
+  @prev-track @play-pause @next-track    KeyLeft KeyDown KeyUp KeyRight
+  @mute       @lower      @increase
+  caps        _         
+)
