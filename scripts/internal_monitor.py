@@ -46,7 +46,7 @@ if __name__ == "__main__":
     elif argv[1] == "r":
         system('hyprctl keyword monitor "eDP-1, disable"')
         sleep(1)
-        system('hyprctl keyword monitor "eDP-1, 2880x1920@60,0x0,auto"')
+        system('hyprctl keyword monitor "eDP-1, 2880x1920@120,0x0,auto"')
 
         system('hyprctl keyword monitor "HDMI-A-1, disabled"')
         sleep(1)
