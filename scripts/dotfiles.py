@@ -15,7 +15,7 @@ def setup_directory(target_dir: str) -> None:
     Args:
         target_dir (str): Path to the target directory
     """
-    Path(target_dir).mkdir(parents=True, exist_ok=True)
+    Path(target_dir).rmdir()
 
 
 def copy_items(items: List[str], source_dir: str, target_dir: str) -> None:
@@ -116,6 +116,7 @@ def main():
     original_dir = os.getcwd()
 
     try:
+        # setup_directory(target_directory)
         r = clone(target_directory)
 
         # Copy files
