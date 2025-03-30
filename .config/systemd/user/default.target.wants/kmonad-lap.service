@@ -1,1 +1,11 @@
-/home/alunity/.config/systemd/user/kmonad-lap.service
+[Unit]
+Description=KMonad configuration for Laptop Keyboard
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kmonad /home/alunity/scripts/lap-keyboard.kbd
+
+[Install]
+WantedBy=default.target

@@ -30,6 +30,8 @@ vim.opt.updatetime = 50
 vim.o.wrap = true
 vim.o.linebreak = true -- breaks by word rather than character
 
+vim.api.nvim_set_option("clipboard", "unnamedplus")
+
 if (vim.loop.os_uname().sysname == "Windows_NT")
 then
   vim.opt.undodir = os.getenv("homepath") .. "/.vim/undodir"

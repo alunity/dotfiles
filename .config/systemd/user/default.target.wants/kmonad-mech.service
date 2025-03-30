@@ -1,1 +1,11 @@
-/home/alunity/.config/systemd/user/kmonad-mech.service
+[Unit]
+Description=KMonad keyboard configuration for Mechanical Keyboard
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kmonad /home/alunity/scripts/mech-keyboard.kbd
+
+[Install]
+WantedBy=default.target
