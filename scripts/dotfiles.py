@@ -74,7 +74,7 @@ def git_operations(repo: Repo) -> None:
         repo.git.add(".")
 
         # Get current UTC time for commit message
-        current_time = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         # Commit changes with timestamp
         repo.index.commit(current_time)
