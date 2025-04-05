@@ -118,7 +118,8 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
-
+        { name = 'buffer' },
+        { name = "vimtex" }
       }, {
         { name = 'buffer' },
       }),
@@ -126,7 +127,6 @@ return {
         ghost_text = true,
       },
     })
-
 
     vim.diagnostic.config({
       -- update_in_insert = true,
