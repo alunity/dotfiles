@@ -18,3 +18,5 @@ source $HOME/.bash_functions/competitive_programming.sh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 export PATH="$HOME/.cabal/bin:$HOME/.ghcup/bin:$PATH"
+
+export MANPAGER='nvim +Man!'
