@@ -7,12 +7,12 @@
     "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces"
-        //"sway/mode",
-        //"sway/scratchpad",
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad",
     ],
     "modules-center": [
-	"hyprland/window"
+      "sway/window"
     ],
     "modules-right": [
         "mpd",
@@ -24,18 +24,25 @@
         "memory",
         "temperature",
         "backlight",
-        //"keyboard-state",
-        "sway/language",
         "battery",
-        //"battery#bat2",
         "clock",
         "tray",
-	"custom/power"
+        "custom/power"
     ],
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+
+
+
     "hyprland/workspaces": {
-	"format": "{icon}",
-	"on-scroll-up": "hyprctl dispatch workspace e+1",
-	"on-scroll-down": "hyprctl dispatch workspace e-1"
+      "format": "{icon}",
+      "on-scroll-up": "hyprctl dispatch workspace e+1",
+      "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
    // Modules configuration
     // "sway/workspaces": {
